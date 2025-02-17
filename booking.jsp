@@ -7,16 +7,50 @@
 
 <!DOCTYPE html>
 <html lang="en">
-   <head>
+  <html lang="en">
+    <head>
         <meta charset="utf-8">
         <title>LOFT CITY | Responsive Travel & Tourism Template</title>
-        <!-- Other head content -->
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="img/favicon.ico" rel="icon">
+        <link href="img/apple-favicon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet"> 
+
+        <!-- Vendor CSS File -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="vendor/slick/slick.css" rel="stylesheet">
+        <link href="vendor/slick/slick-theme.css" rel="stylesheet">
+        <link href="vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Main Stylesheet File -->
+        <link href="css/hover-style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
         <!-- Header Section Start -->
         <header id="header">
-            <!-- Your header content -->
-        </header>    
+            <a href="index.jsp" class="logo"><img src="img/logo.png" alt="logo"></a>
+            <div class="phone"><i class="fa fa-phone"></i>+1 234 567 8900</div>
+            <div class="mobile-menu-btn"><i class="fa fa-bars"></i></div>
+            <nav class="main-menu top-menu">
+                <ul>
+                    <li class="active"><a href="index.jsp">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="room.html">Apartments</a></li>
+                    <li><a href="amenities.html">Amenities</a></li>
+                    <li><a href="booking.jsp">Booking</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
         <!-- Header Section End -->
 
 <%
@@ -199,18 +233,63 @@
     }
 </script>
 
-<!-- Footer Section Start -->
-<div id="footer">
-    <!-- Your footer content -->
-</div>
-<!-- Footer Section End -->
-
+  <!-- Footer Section Start -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="social">
+                            <a href="https://instagram.com/yourprofile" target="_blank"><li class="fa fa-instagram"></li></a>
+                            <a href="https://twitter.com/yourprofile" target="_blank"><li class="fa fa-twitter"></li></a>
+                            <a href="https://facebook.com/yourprofile" target="_blank"><li class="fa fa-facebook-f"></li></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Terms</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <p>Copyright &#169; <a href="https://htmlcodex.com">HTML Codex</a> All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section End -->
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-<!-- Vendor JavaScript File -->
-<!-- Your vendor JS -->
+        <!-- Vendor JavaScript File -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/easing/easing.min.js"></script>
+        <script src="vendor/superfish/hoverIntent.js"></script>
+        <script src="vendor/superfish/superfish.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+        <script src="vendor/slick/slick.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        
+        <!-- Main Javascript File -->
+      <script>
+    $(document).ready(function() {
+        $('#checkin').datetimepicker({
+            format: 'YYYY/MM/DD' // Set to year/month/day format
+        });
+        $('#checkout').datetimepicker({
+            format: 'YYYY/MM/DD', // Set to year/month/day format
+            useCurrent: false // Important for "Check-Out" field to be after "Check-In"
+        });
 
-<!-- Main Javascript File -->
-<script src="js/main.js"></script>
+        $("#checkin").on("change.datetimepicker", function(e) {
+            $('#checkout').datetimepicker('minDate', e.date); // Ensure checkout is after check-in
+        });
+    });
+</script>
+        <script src="js/main.js"></script>
 </body>
 </html>
